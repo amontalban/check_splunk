@@ -15,9 +15,9 @@ PORTS="8089 8000 9997 80 443"
 
 . $PROGPATH/utils.sh
 
-SPLUNKD_STATUS=`service splunk status | grep -i splunkd | cut -d" " -f3`
-SPLUNKHELPERS_STATUS=`service splunk status | grep -i "splunk helpers" | cut -d" " -f4`
-SPLUNKWEB_STATUS=`service splunk status | grep -i splunkweb | cut -d" " -f3`
+SPLUNKD_STATUS=`sudo /etc/init.d/splunk status | grep -i splunkd | cut -d" " -f3`
+SPLUNKHELPERS_STATUS=`sudo /etc/init.d/splunk status | grep -i "splunk helpers" | cut -d" " -f4`
+SPLUNKWEB_STATUS=`sudo /etc/init.d/splunk status | grep -i splunkweb | cut -d" " -f3`
 
 if [ ${SPLUNKD_STATUS} = "running" ] ; then
   if [ ${SPLUNKHELPERS_STATUS} = "running" ] ; then
